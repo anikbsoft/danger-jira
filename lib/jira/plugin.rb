@@ -65,6 +65,7 @@ module Danger
     private
 
     def vcs_host
+      return vsts if defined? @dangerfile.vsts
       return gitlab if defined? @dangerfile.gitlab
       return github
     end
